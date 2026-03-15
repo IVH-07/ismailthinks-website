@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ismail Vilayat Hussain — Lead Delivery Manager & Product Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --paper2: #ede8db;
+    --accent: #c84b2f;
+    --accent2: #2f6dc8;
+    --muted: #7a7468;
+    --border: #d4cfc4;
+    --card: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Cabinet Grotesk', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245, 240, 232, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-logo .name { color: var(--muted); }
+
+  .nav-logo .separator {
+    color: var(--muted);
+    margin: 0 0.15em;
+  }
+
+  .nav-logo .typewriter {
+    color: var(--accent);
+    position: relative;
+  }
+
+  .nav-logo .typewriter::after {
+    content: '';
+    display: inline-block;
+    width: 1.5px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 1px;
+    vertical-align: middle;
+    animation: blink 0.7s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+
+  nav a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    padding: 6rem 3rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title em { font-style: italic; color: var(--accent); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+  .hero-right {
+    padding: 6rem 3rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--paper2);
+  }
+
+  .stat-block {
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .stat-block:nth-child(2) { animation-delay: 0.1s; }
+  .stat-block:nth-child(3) { animation-delay: 0.2s; }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .currently-block {
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .currently-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .pulse {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 0.4rem;
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    padding: 7rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    position: sticky;
+    top: 7rem;
+  }
+
+  .section-label span { display: block; color: var(--accent); margin-bottom: 0.25rem; }
+
+  .philosophy-content h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .philosophy-content p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pillar {
+    padding: 1.75rem 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .pillar:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+  .pillar-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+
+  .pillar h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+  .pillar p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  /* DIVIDER */
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 3rem; }
+
+  /* WORK */
+  .work {
+    padding: 7rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .work-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); }
+
+  .case-studies {
+    display: grid;
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .case-study {
+    background: var(--card);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .case-study:hover { background: var(--paper2); }
+
+  .cs-num {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    min-width: 2rem;
+  }
+
+  .cs-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .cs-body p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+  .cs-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .tag.ai { border-color: var(--accent); color: var(--accent); }
+  .tag.strategy { border-color: var(--accent2); color: var(--accent2); }
+
+  /* AI EXPERIMENTS */
+  .experiments {
+    padding: 7rem 3rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .experiments-inner { max-width: 1200px; margin: 0 auto; }
+
+  .experiments h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .experiments-sub {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: #888;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .experiments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #333;
+    border: 1px solid #333;
+  }
+
+  .experiment-card { background: #161616; padding: 2rem; transition: background 0.2s; }
+  .experiment-card:hover { background: #1e1e1e; }
+
+  .exp-status {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .exp-status.live { color: #5cb85c; }
+  .exp-status.live::before { content: '●'; }
+  .exp-status.exploring { color: #e6a817; }
+  .exp-status.exploring::before { content: '◐'; }
+  .exp-status.building { color: #2f6dc8; }
+  .exp-status.building::before { content: '◆'; }
+
+  .experiment-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: #f5f0e8; }
+  .experiment-card p { font-size: 0.85rem; color: #888; line-height: 1.65; }
+
+  .exp-tool {
+    margin-top: 1.25rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: #555;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  /* WRITING */
+  .writing { padding: 7rem 3rem; max-width: 1200px; margin: 0 auto; }
+
+  .writing h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 3rem; }
+
+  .posts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+  .post-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .post-date {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .post-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .post-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+  .post-card .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 7rem 3rem;
+    background: var(--paper2);
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+  }
+
+  .contact p { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
+
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * { animation: fadeUp 0.7s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+
+  /* HAMBURGER BUTTON */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* TABLET — 768px to 1024px */
+  @media (max-width: 1024px) {
+    .pillars { grid-template-columns: repeat(2, 1fr); }
+    .experiments-grid { grid-template-columns: repeat(2, 1fr); }
+    .posts { grid-template-columns: repeat(2, 1fr); }
+    .philosophy { gap: 3rem; padding: 6rem 2rem; }
+    .work { padding: 6rem 2rem; }
+    .writing { padding: 6rem 2rem; }
+    .experiments { padding: 6rem 2rem; }
+    .contact { padding: 6rem 2rem; }
+  }
+
+  /* MOBILE — up to 768px */
+  @media (max-width: 768px) {
+    /* Nav — hamburger */
+    nav {
+      padding: 1rem 1.25rem;
+      position: fixed;
+    }
+
+    .nav-toggle { display: flex; }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--paper);
+      padding: 5rem 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      z-index: 150;
+    }
+
+    nav ul.open { display: flex; }
+
+    nav ul li { border-bottom: 1px solid var(--border); }
+
+    nav ul li:last-child { border-bottom: none; }
+
+    nav a {
+      display: block;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-left {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 6rem 1.25rem 3rem;
+    }
+
+    .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+
+    .hero-sub { font-size: 0.95rem; }
+
+    .hero-right {
+      padding: 2.5rem 1.25rem;
+      gap: 1.5rem;
+    }
+
+    .stat-number { font-size: 2rem; }
+
+    .currently-block { font-size: 0.82rem; }
+
+    /* Philosophy */
+    .philosophy {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 4rem 1.25rem;
+    }
+
+    .section-label { position: static; margin-bottom: 0.5rem; }
+
+    .philosophy-content h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+    .philosophy-content p { font-size: 0.95rem; }
+
+    .pillars { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
+
+    .pillar { padding: 1.25rem; }
+
+    /* Work */
+    .work { padding: 4rem 1.25rem; }
+
+    .work-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; }
+
+    .case-study {
+      grid-template-columns: auto 1fr;
+      padding: 1.5rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .cs-tags { display: none; }
+
+    .cs-body h3 { font-size: 1rem; }
+
+    .cs-body p { font-size: 0.82rem; }
+
+    /* Experiments */
+    .experiments { padding: 4rem 1.25rem; }
+
+    .experiments-grid { grid-template-columns: 1fr; }
+
+    .experiment-card { padding: 1.5rem; }
+
+    /* Writing */
+    .writing { padding: 4rem 1.25rem; }
+
+    .posts { grid-template-columns: 1fr; gap: 1rem; }
+
+    .post-card { padding: 1.5rem; }
+
+    .post-card h3 { font-size: 1.05rem; }
+
+    /* Contact */
+    .contact { padding: 4rem 1.25rem; }
+
+    .contact h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+
+    .contact-links { flex-direction: column; align-items: center; }
+
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 1.25rem;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: center;
+    }
+
+    /* Divider */
+    .section-divider { margin: 0 1.25rem; }
+  }
+
+  /* SMALL MOBILE — up to 400px */
+  @media (max-width: 400px) {
+    .hero-title { font-size: 1.9rem; }
+    .hero-eyebrow { font-size: 0.65rem; }
+    .stat-number { font-size: 1.75rem; }
+    .nav-logo { font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="name">Ismail</span>
+    <span class="separator">,&nbsp;</span>
+    <span class="typewriter" id="typewriter"></span>
+  </div>
+  <ul id="nav-menu">
+    <li><a href="#work" onclick="closeMenu()">Work</a></li>
+    <li><a href="#experiments" onclick="closeMenu()">AI Lab</a></li>
+    <li><a href="#writing" onclick="closeMenu()">Writing</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Delivery · Product Strategy · AI</div>
+    <h1 class="hero-title">
+      Building the <em>mindset</em>,<br>frameworks and teams<br>to scale what's next.
+    </h1>
+    <p class="hero-sub">
+      I help organisations grow the mindset, reusable frameworks, and teams that are ready to scale — unconstrained by process — so they can build the next big thing. Currently leading delivery at Clarivate, with an eye firmly on what AI makes newly possible.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">See My Work</a>
+      <a href="https://www.linkedin.com/in/ivh/" target="_blank" class="btn-secondary">LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-block">
+      <div class="stat-number">8+</div>
+      <div class="stat-label">Years across PMO, Data, and Delivery</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">25+</div>
+      <div class="stat-label">Cross-functional teams led concurrently</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Organisations shaped from the inside out</div>
+    </div>
+    <div class="currently-block">
+      <div class="currently-label"><span class="pulse"></span>Currently thinking about</div>
+      How AI can collapse the gap between a raw idea and a pitchable, executable plan — so that anyone with a vision can ship, not just those who know the process.
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="section-label">
+    <span>01</span>
+    Philosophy
+  </div>
+  <div class="philosophy-content">
+    <h2>"Process should serve people. Not the other way around."</h2>
+    <p>
+      I've spent the better part of a decade inside the translation layer — the space where strategy meets execution, where ideas either gain traction or quietly die. What I've learned is that most failure isn't a talent problem or a strategy problem. It's a systems problem. The wrong process slows the right people down.
+    </p>
+    <p>
+      My approach is rooted in human behaviour and genuine engagement. Delivering authentic value to people — and bringing them along in the process of delivering it — is both the method and the goal. Data and AI are powerful tools, but only in service of that human intent.
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">◎</div>
+        <h3>People over Process</h3>
+        <p>Optimise process around people. Teams unshackled from bureaucracy move faster and build better.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⟳</div>
+        <h3>Agility as Mindset</h3>
+        <p>Agility isn't a framework. It's a culture of continuous learning, honest feedback, and earned trust.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚡</div>
+        <h3>AI as Genuine Leverage</h3>
+        <p>AI should cut the distance from idea to execution — not add more tools to an already noisy stack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="work-header">
+    <h2>Career Highlights</h2>
+  </div>
+  <div class="case-studies">
+    <a class="case-study" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="cs-num">01</div>
+      <div class="cs-body">
+        <h3>Standing up a PMO from scratch — West Pharma</h3>
+        <p>Joined as an intern during a complex SAP S/4 Hana implementation and became the central point for all status reporting, tooling, and communication. Before leaving, trained and mentored three interns who became the foundation of the organisation's technology centre PMO.</p>
+      </div>
+      <div class="cs-tags">
+        <span class="tag">PMO</span>
+        <span class="tag">SAP S/4 Hana</span>
+        <span class="tag strategy">Mentorship</span>
+      </div>
+    </a>
+    <a class="case-study" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="cs-num">02</div>
+      <div class="cs-body">
+        <h3>Building data & analytics teams at scale — Cerner</h3>
+        <p>Built, led, and optimised two data and analytics teams delivering dashboards into Cerner's HealtheIntent population health platform. This chapter laid the foundations of my data fluency and my approach to high-performing team building.</p>
+      </div>
+      <div class="cs-tags">
+        <span class="tag ai">Data & Analytics</span>
+        <span class="tag">HealtheIntent</span>
+        <span class="tag strategy">Team Building</span>
+      </div>
+    </a>
+    <a class="case-study" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="cs-num">03</div>
+      <div class="cs-body">
+        <h3>Leading delivery at portfolio scale — Clarivate</h3>
+        <p>Led 4 cross-functional teams concurrently while providing strategic oversight across a portfolio of up to 25 content delivery teams. Championed agility, product and customer-centric thinking, and an AI experimentation framework. Promoted to Lead Delivery Manager to guide other DMs in raising the bar.</p>
+      </div>
+      <div class="cs-tags">
+        <span class="tag ai">AI Advocacy</span>
+        <span class="tag strategy">Portfolio Strategy</span>
+        <span class="tag">25 Teams</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- AI EXPERIMENTS -->
+<section class="experiments" id="experiments">
+  <div class="experiments-inner">
+    <h2>AI Lab & Thinking</h2>
+    <div class="experiments-sub">Tools I use, ideas I'm building, problems I want to solve</div>
+    <div class="experiments-grid">
+      <div class="experiment-card">
+        <div class="exp-status live">Daily Use</div>
+        <h3>AI-Augmented Delivery Workflow</h3>
+        <p>Actively using Claude, ChatGPT, and Gemini to accelerate everything from stakeholder comms to retrospective synthesis and risk narrative generation. AI as a thinking partner, not just a writing tool.</p>
+        <div class="exp-tool">Claude · ChatGPT · Gemini</div>
+      </div>
+      <div class="experiment-card">
+        <div class="exp-status exploring">Exploring</div>
+        <h3>Automation Pipelines with n8n & Make</h3>
+        <p>Experimenting with workflow automation to eliminate repetitive delivery overhead — status updates, ticket creation, and reporting loops that consume PM time without creating value.</p>
+        <div class="exp-tool">n8n · Make.com · Replit</div>
+      </div>
+      <div class="experiment-card">
+        <div class="exp-status building">Building Toward</div>
+        <h3>Idea-to-Execution Platform</h3>
+        <p>A platform where anyone can pour in a raw idea — product, project, or vision — and AI augments it into a presentable, pitchable plan. PRDs, flow diagrams, Jira tickets, roadmaps. So that a good idea is never killed by unfamiliarity with process.</p>
+        <div class="exp-tool">Concept stage · Claude API · Jira</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing" id="writing">
+  <h2>Point of View</h2>
+  <div class="posts">
+    <a class="post-card" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="post-date">Coming soon</div>
+      <h3>Process is not the enemy. Bad process is.</h3>
+      <p>Why the best delivery managers I know spend more time removing process than adding it — and what they replace it with.</p>
+      <span class="read-more">Follow on LinkedIn →</span>
+    </a>
+    <a class="post-card" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="post-date">Coming soon</div>
+      <h3>The PM who never ships vs the PM who never thinks</h3>
+      <p>Delivery without strategy is just busyness. Strategy without delivery is just slides. The gap between them is where careers are made.</p>
+      <span class="read-more">Follow on LinkedIn →</span>
+    </a>
+    <a class="post-card" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="post-date">Coming soon</div>
+      <h3>AI won't replace PMs. It will expose the ones who don't think.</h3>
+      <p>The automation wave is coming for task managers, not strategists. Here's how to be on the right side of that line.</p>
+      <span class="read-more">Follow on LinkedIn →</span>
+    </a>
+    <a class="post-card" href="https://www.linkedin.com/in/ivh/" target="_blank">
+      <div class="post-date">Coming soon</div>
+      <h3>Stakeholder management is a misnomer. It's human engagement.</h3>
+      <p>People don't want to be managed. They want to be heard, involved, and shown that their input shaped the outcome. That's a different skill entirely.</p>
+      <span class="read-more">Follow on LinkedIn →</span>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Let's build something that actually matters</h2>
+  <p>Open to product leadership conversations, advisory work, and ideas worth pursuing together.</p>
+  <div class="contact-links">
+    <a href="mailto:ismailsemailid@gmail.com" class="btn-primary">ismailsemailid@gmail.com</a>
+    <a href="https://www.linkedin.com/in/ivh/" target="_blank" class="btn-secondary">LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Ismail Vilayat Hussain. Built with intent.</p>
+  <p>Lead Delivery Manager · Product Strategist · AI Evangelist</p>
+</footer>
+
+<script>
+  // Typewriter animation
+  const words = ['thinks.', 'writes.', 'builds.', 'ships.'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isPaused = false;
+  const el = document.getElementById('typewriter');
+
+  const TYPE_SPEED = 110;
+  const DELETE_SPEED = 60;
+  const PAUSE_AFTER_WORD = 1800;
+  const PAUSE_BEFORE_TYPE = 320;
+
+  function type() {
+    const current = words[wordIndex];
+
+    if (isPaused) return;
+
+    if (!isDeleting) {
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        isPaused = true;
+        setTimeout(() => {
+          isPaused = false;
+          isDeleting = true;
+          type();
+        }, PAUSE_AFTER_WORD);
+        return;
+      }
+      setTimeout(type, TYPE_SPEED);
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        isPaused = true;
+        setTimeout(() => {
+          isPaused = false;
+          type();
+        }, PAUSE_BEFORE_TYPE);
+        return;
+      }
+      setTimeout(type, DELETE_SPEED);
+    }
+  }
+
+  // Start after a short delay so page loads first
+  setTimeout(type, 900);
+
+  // Hamburger menu
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    const toggle = document.getElementById('nav-toggle');
+    menu.classList.toggle('open');
+    toggle.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('nav-menu').classList.remove('open');
+    document.getElementById('nav-toggle').classList.remove('open');
+  }
+  document.addEventListener('click', function(e) {
+    const nav = document.querySelector('nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+</script>
+</body>
+</html>
